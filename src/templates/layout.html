@@ -1,0 +1,69 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	{% block title %}<title>DragonFeed - New And Informal News</title>{% endblock %}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+	<link href="https://fonts.googleapis.com/css?family=Raleway:400,600" rel="stylesheet">
+
+</head>
+
+<body>
+	<!-- Bootstarp navbar-->
+	<nav class="navbar navbar-expand-lg navbar-light nav-bar">
+	  	<a class="navbar-brand" href="{% url 'article:index' %}">
+			<img src="{% static 'images/DragonFeedSmall.png'%}" width="50" height="50" alt="DragonFeed">
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		    <ul class="navbar-nav mr-auto">
+				<a href="{% url 'article:formal' %}">
+					<button class="nav-item btn my-2 my-sm-0 nav-bar-button-porperties">
+						Formal Events
+					</button>
+				</a>		
+				<a href="{% url 'article:informal' %}">
+					<button class="nav-item btn my-2 my-sm-0 nav-bar-button-porperties">
+						Informal Events
+					</button>
+				</a>
+			</ul>
+		    <ul class="navbar-nav ml-auto">
+			    <form class="form-inline my-2 my-lg-0">
+			      <input class="form-control mr-sm-2 nav-bar-input-porperties" type="search" class="search-nav" placeholder="Search by Tag" aria-label="Search">
+			      <button class="btn my-2 my-sm-0 nav-bar-button-porperties" type="submit">Search</button>
+			    </form>
+				<a class="nav-link" href="">
+					<button class="btn my-2 my-sm-0 nav-bar-button-porperties" type="submit">
+							Sign Up	
+					</button>
+				</a>
+				<a class="nav-link" href="">
+					<button class="btn my-2 my-sm-0 nav-bar-button-porperties" type="submit">
+							Log In	
+					</button>
+				</a>
+          	</ul>
+		</div>
+	</nav>
+	<br>
+	
+		{% block index.html%}
+		
+		{% endblock %}
+
+	<br>
+	
+	{% block footer%}
+		
+	{% endblock %}
+
+</body>
+<script type="text/javascript" href="{% static 'js/jquery.js' %}"></script>
+<script type="text/javascript" href="{% static 'js/bootstrap.js' %}"></script>
+<script type="text/javascript" href="{% static 'js/my.js' %}"></script>
+</html>

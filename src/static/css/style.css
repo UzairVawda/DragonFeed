@@ -1,0 +1,196 @@
+*{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+}
+.navbar {
+    background-color: #ffc600;
+  }
+.navbar .navbar-brand {
+  color: #002f6c;
+}
+.navbar .navbar-brand:hover,
+.navbar .navbar-brand:focus {
+  color: #002f6c;
+}
+.navbar .navbar-text {
+  color: #002f6c;
+}
+.navbar .navbar-text a {
+  color: #002f6c;
+}
+.navbar .navbar-text a:hover,
+.navbar .navbar-text a:focus {
+  color: #002f6c; 
+}
+.navbar .navbar-nav .nav-link {
+  color: #002f6c;
+  border-radius: .25rem;
+  margin: 0 0.25em;
+}
+
+.navbar .navbar-nav .nav-item.active .nav-link,
+.navbar .navbar-nav .nav-item.active .nav-link:hover,
+.navbar .navbar-nav .nav-item.active .nav-link:focus,
+.navbar .navbar-nav .nav-item.show .nav-link,
+.navbar .navbar-nav .nav-item.show .nav-link:hover,
+.navbar .navbar-nav .nav-item.show .nav-link:focus {
+  color: #002f6c;
+  background-color: #ffc600;
+}
+.navbar .navbar-toggle {
+  border-color: #002f6c;
+}
+.navbar .navbar-toggle:hover,
+.navbar .navbar-toggle:focus {
+  background-color: #ffc600;
+}
+.navbar .navbar-toggle .navbar-toggler-icon {
+  color: #002f6c;
+}
+.navbar .navbar-collapse,
+.navbar .navbar-form {
+  border-color: #002f6c;
+}
+.navbar .navbar-link {
+  color: #002f6c;
+}
+.navbar .navbar-link:hover {
+  color: #002f6c;
+}
+
+@media (max-width: 575px) {
+  .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item {
+    color: #002f6c;
+  }
+  .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item:hover,
+  .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item:focus {
+    color: #002f6c;
+  }
+  .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item.active {
+    color: #002f6c;
+    background-color: #ffc600;
+  }
+}
+
+@media (max-width: 767px) {
+  .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item {
+    color: #002f6c;
+  }
+  .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item:hover,
+  .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item:focus {
+    color: #002f6c;
+  }
+  .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item.active {
+    color: #002f6c;
+    background-color: #ffc600;
+  }
+}
+
+@media (max-width: 991px) {
+  .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item {
+    color: #002f6c;
+  }
+  .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item:hover,
+  .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item:focus {
+    color: #002f6c;
+  }
+  .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item.active {
+    color: #002f6c;
+    background-color: #ffc600;
+  }
+}
+
+@media (max-width: 1199px) {
+  .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item {
+    color: #002f6c;
+  }
+  .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item:hover,
+  .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item:focus {
+    color: #002f6c;
+  }
+  .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item.active {
+    color: #002f6c;
+    background-color: #ffc600;
+  }
+}
+
+.navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item {
+  color: #002f6c;
+}
+.navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item:hover,
+.navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item:focus {
+  color: #002f6c;
+}
+.navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item.active {
+  color: #002f6c;
+  background-color: #ffc600;
+}
+
+#footer {
+  position:absolute;
+  bottom:0;
+  width:100%;
+  height:60px;   /* Height of the footer */
+  background:#6cf;
+}
+
+.content-header{
+    font-family: 'Raleway';
+    font-weight: 500;
+    font-size: 40px;
+}
+.nav-bar-button-porperties{
+  background-color: #ffc600;
+  color: #002f6c;
+}
+.nav-bar-button-porperties:hover{
+  background-color: #002f6c;
+  color: #ffc600;
+}
+input[type=search] {
+  background-color: #ffc600;
+  color: white;
+  border-color: #002f6c;
+}
+.nav-bar-input-porperties:hover{
+  background-color: #ffffff;
+}
+
+.bottom-nav-header{
+  text-align: center;
+}
+::placeholder{
+  color: #002f6c;
+}
+.sign-up-button{
+  background-color: #ffc600;
+  color: #002f6c;
+}
+.sign-up-button:hover{
+  background-color: #002f6c;
+  color: #ffc600;
+}
+.admin-panel-button{
+  background-color: #ffc600;
+  color: #002f6c;
+}
+.admin-panel-button:hover{
+  background-color: #002f6c;
+  color: #ffc600;
+}
+.add-article-button{
+  background-color: #ffc600;
+  color: #002f6c;
+}
+.admin-panel-button:hover{
+  background-color: #002f6c;
+  color: #ffc600;
+}
+.log-in-button{
+  background-color: #ffc600;
+  color: #002f6c;
+}
+.log-in-button:hover{
+  background-color: #002f6c;
+  color: #ffc600;
+}

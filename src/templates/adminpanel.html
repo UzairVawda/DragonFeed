@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{% block title %} <title>DragonFeed - Admin Panel</title> {% endblock %}
+
+{% block index.html%}
+    <div class="container">
+        <p class="text-center content-header">Admin Panel</p>
+        <br>
+        <div class="row">
+            <div class="col-md-2 offset-md-3">
+                <a href="{% url 'article:addevent' %}">
+                    <button class="btn admin-panel-button">
+                        Add Article
+                    </button>
+                </a>
+            </div>
+            <div class="col-md-2 ">
+                <button class="btn admin-panel-button">
+                    Edit Article
+                </button>
+            </div>
+            <div class="col-md-2">
+                <button class="btn admin-panel-button">
+                    Logout
+                </button>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
