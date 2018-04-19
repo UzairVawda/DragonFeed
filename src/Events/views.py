@@ -43,21 +43,6 @@ class AddEvent(CreateView):
     template_name = 'articleform.html'
     fields = ['Title', 'Orginization', 'Location', 'Description', 'Start', 'End', 'Tag', 'Link', 'Flyer']
 
-#registration/signup.html - allows the users to signup 
-def SignUp(request):
-    if request.method == 'POST':
-        form = SignUpForm(request.POST)
-        if form.is_valid():
-            form.save()
-            username = form.cleaned_data.get('username')
-            raw_password = form.cleaned_data.get('password1')
-            user = authenticate(username=username, password=raw_password)
-            login(request, user)
-            return redirect('article:login')
-    else:
-        form = SignUpForm()
-    return render(request, 'registration/signup.html', {'form': form})
-
 #adminpanel.html - admin panel where the user can edit certain features
 def AdminPanel(request):
     return render(request, 'adminpanel.html')

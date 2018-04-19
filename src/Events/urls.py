@@ -19,17 +19,9 @@ urlpatterns = [
 
     #add event - where the user can add events 
     url(r'^addevent$', views.AddEvent.as_view(), name="addevent"),
- 
-    #sign up - where the user can go in and sign up 
-    url(r'^signup$', views.SignUp, name='signup'),
 
     #admin panel - where the user can add an event, edit a previous event, make suggestions, and logout
-    # url(r'^adminpanel$', views.AdminPanel, name='adminpanel'),
+    url(r'^adminpanel$', views.AdminPanel, name='adminpanel'),
 
-    # #log in - where users can log in  
-    # url(r'^login/$', auth_views.login, {'template_name': 'registration/login.html'}, name='login'),
-    
-    # #log out- where users can log out  
-    # url(r'^logout/$', auth_views.logout, {'next_page': '/'}, name='logout'),
 
 ]
