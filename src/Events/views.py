@@ -42,7 +42,3 @@ class AddEvent(CreateView):
     fields = '__all__'
     template_name = 'articleform.html'
     fields = ['Title', 'Orginization', 'Location', 'Description', 'Start', 'End', 'Tag', 'Link', 'Flyer']
-
-#adminpanel.html - admin panel where the user can edit certain features
-def AdminPanel(request):
-    return render(request, 'adminpanel.html')

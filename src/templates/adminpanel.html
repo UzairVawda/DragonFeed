@@ -20,9 +20,11 @@
                 </button>
             </div>
             <div class="col-md-2">
-                <button class="btn admin-panel-button">
-                    Logout
-                </button>
+                <a href="{% url 'accounts:logout' %}">
+                    <button class="btn admin-panel-button">
+                        Logout
+                    </button>
+                </a> 
             </div>
         </div>
     </div>

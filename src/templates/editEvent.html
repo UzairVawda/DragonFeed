@@ -1,0 +1,16 @@
+{% extends 'layout.html'%}
+
+{% block title %}<title>DragonFeed - Formal Events</title>{% endblock %}
+
+{% block index.html%}
+<div class="container">
+    {% if allArticles %}
+    <p class="text-center content-header">Current Formal* Events</p> 
+        <div class="card-deck ">
+            {% for article in allArticles %}
+                
+            {% endfor %} 
+        </div> 
+    {% endif %}
+</div>
+{% endblock %}

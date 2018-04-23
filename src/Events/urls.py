@@ -1,6 +1,5 @@
 from . import views 
 from django.conf.urls import include, url
-# from django.contrib.auth import views as auth_views
 
 app_name = 'article'
 
@@ -19,9 +18,5 @@ urlpatterns = [
 
     #add event - where the user can add events 
     url(r'^addevent$', views.AddEvent.as_view(), name="addevent"),
-
-    #admin panel - where the user can add an event, edit a previous event, make suggestions, and logout
-    url(r'^adminpanel$', views.AdminPanel, name='adminpanel'),
-
 
 ]

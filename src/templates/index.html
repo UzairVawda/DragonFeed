@@ -1,7 +1,53 @@
 {% extends 'layout.html'%}
 {% block index.html%}
-<div class="container">
-    {% if allArticles %} 
+<div class="container-fluid">
+    <div class="row">	
+        <div class="col-md-9 mainfeed">
+            {% if allArticles %} 
+            <p class="text-center content-header">Current Events</p>
+            <div class="card-deck">
+                {% for article in allArticles %}
+                    <div class="col-md-4">
+                        <div class="card">
+                            <a href="{% url 'article:details' article.id %}">
+                                <img class="card-img-top" src="{{ article.Flyer.url}}" alt="Card image cap">
+                            </a>
+                            <br>
+                            <div class="card-footer">
+                                <small class="text-muted">Uploaded {{article.timestamp}}</small>
+                            </div>
+                        </div>
+                        <br> 
+                    </div>          
+                {% endfor %}
+            </div>     
+            {% else %}
+                <h1>No Events Yet</h1>
+        {% endif %}
+        </div>
+        <div class="col-md-3 widgets">
+            <h1>TWO</h1>
+        </div>
+    </div>	
+</div>
+{% endblock %}
+
+{% block footer%}
+    <div class="navbar navbar-bottom fixed">
+        <p class="text-center bottom-nav-header">Searchable Tags</p>
+        <br>
+        <div class="container">
+            {% for article in allArticles %}
+                <div class="col-md-2">
+                    <p>{{article.Tag|lower}}</p>
+                </div>      
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
+
+<!-- <div class="container"> -->
+    <!-- {% if allArticles %} 
         <p class="text-center content-header">Current Events</p>
         <div class="card-deck">
             {% for article in allArticles %}
@@ -21,20 +67,5 @@
         </div>     
         {% else %}
             <h1>No Events Yet</h1>
-    {% endif %}
-</div>
-{% endblock %}
-
-{% block footer%}
-    <div class="navbar navbar-bottom fixed">
-        <p class="text-center bottom-nav-header">Searchable Tags</p>
-        <br>
-        <div class="container">
-            {% for article in allArticles %}
-                <div class="col-md-2">
-                    <p>{{article.Tag|lower}}</p>
-                </div>      
-            {% endfor %}
-        </div>
-    </div>
-{% endblock %}
+    {% endif %} -->
+<!-- </div> -->

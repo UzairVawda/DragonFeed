@@ -15,9 +15,11 @@
 				{% csrf_token %}
 				{% include 'formtemplate.html'%}
 				<div class="form-group">
-					<div class="col-md-10">
-						<button type="submit" class="btn add-article-button">Add Article</button>
-					</div>
+					<a href="{% 'e' %}">
+						<div class="col-md-10">
+							<button type="submit" class="btn add-article-button">Add Article</button>
+						</div>
+					</a>
 				</div>
 			</form>
 		</div>
