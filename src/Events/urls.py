@@ -15,8 +15,4 @@ urlpatterns = [
 
     #detailed view - where if the user clicks on an event they get more info
     url(r'^(?P<pk>[0-9]+)/$', views.DetailView.as_view(), name="details"),
-
-    #add event - where the user can add events 
-    url(r'^addevent$', views.AddEvent.as_view(), name="addevent"),
-
 ]

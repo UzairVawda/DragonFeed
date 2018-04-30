@@ -36,9 +36,3 @@ class DetailView(generic.DetailView):
     template_name = 'details.html'
     model = Article
 
-#articleform.html - allows the user to add an event
-class AddEvent(CreateView):
-    model = Article
-    fields = '__all__'
-    template_name = 'articleform.html'
-    fields = ['Title', 'Orginization', 'Location', 'Description', 'Start', 'End', 'Tag', 'Link', 'Flyer']
