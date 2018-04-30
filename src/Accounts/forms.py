@@ -24,33 +24,20 @@ class UserLoginForm(forms.Form):
         return super(UserLoginForm, self).clean(*args, **kwargs)
 
 class UserRegistrationForm(forms.ModelForm):
-    firstName = forms.CharField(label = 'First Name')
-    lastName = forms.CharField(label = 'Last Name')
     email = forms.EmailField(label = 'Email Address')
-    email2 = forms.EmailField(label = 'Confirm Email')
-    password = forms.CharField(widget = forms.PasswordInput,label = 'Password')
+    password = forms.CharField(widget = forms.PasswordInput, label = 'Password')
+    password2 = forms.CharField(widget = forms.PasswordInput, label = 'Confirm Password')
     
     class Meta:
         model = User
-        fields = [
-            'firstName',
-            'lastName',
-            'username',
-            'email',
-            'email2',
-            'password'
-        ]
+        fields = ('username','email','password', 'password2')
 
-    def clean(self, *args, **kwargs):
-        email = self.cleaned_data.get('email')
-        email2 = self.cleaned_data.get('email2')
-        if email != email2:
-            return forms.ValidationError("Emails must match")
-        return super(UserRegistrationForm, self).clean(*args, **kwargs)
+    def clean(self):
+        cleaned_data = super(UserRegistrationForm, self).clean()
+        password = cleaned_data.get("password")
+        password2 = cleaned_data.get("confirm_password")
 
-    def clean_email2(self):
-        email = self.cleaned_data.get('email')
-        email2 = self.cleaned_data.get('email2')
-        if email != email2:
-            return forms.ValidationError("Emails must match")
-        return email
+        if password != password2:
+            raise forms.ValidationError(
+                "Both Passwords must match does not match"
+            )

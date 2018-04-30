@@ -13,10 +13,13 @@ def login_view(request):
     if form.is_valid():
         username = form.cleaned_data.get("username")
         password = form.cleaned_data.get("password")
+        context = {
+            'username': username
+        }
         user = authenticate(username=username, password=password)
         login(request, user)
         print(request.user.is_authenticated()) 
-        return render(request, 'index.html')
+        return render(request, 'adminpanel.html', context)
     return render(request, 'loginform.html', {'form':form, 'title':title})
 
 def register_view(request):
@@ -28,8 +31,10 @@ def register_view(request):
         user.set_password(password)
         user.save()
         new_user = authenticate(username=user.username, password=password)
-        login(request, new_user)
-        return render(request, 'adminpanel.html')
+        # login(request, new_user)
+        print(new_user)
+        print(request.user.is_authenticated()) 
+        return redirect('/accounts/login')
     context = {
         "form": form,
         "title": title
@@ -38,4 +43,4 @@ def register_view(request):
 
 def logout_view(request):
     logout(request)
-    return render(request, 'index.html')    
+    return redirect('/')  
