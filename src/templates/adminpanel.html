@@ -4,20 +4,22 @@
 
 {% block index.html%}
     <div class="container">
-        <p class="text-center content-header">Admin Panel</p>
+        <p class="text-center content-header">Welcome to the Admin Panel, {{username}}</p>
         <br>
         <div class="row">
             <div class="col-md-2 offset-md-3">
-                <a href="{% url 'article:addevent' %}">
+                <a href="{% url 'adminpanel:addevent' %}">
                     <button class="btn admin-panel-button">
                         Add Article
                     </button>
                 </a>
             </div>
             <div class="col-md-2 ">
-                <button class="btn admin-panel-button">
-                    Edit Article
-                </button>
+                <a href="{% url 'adminpanel:edit-event' %}">
+                    <button class="btn admin-panel-button">
+                        Edit Article
+                    </button>
+                </a>
             </div>
             <div class="col-md-2">
                 <a href="{% url 'accounts:logout' %}">

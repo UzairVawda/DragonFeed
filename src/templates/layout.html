@@ -9,7 +9,7 @@
 
 </head>
 
-<body>
+<body onload="myFunction()">
 	<!-- Bootstarp navbar-->
 	<nav class="navbar navbar-expand-lg navbar-light nav-bar">
 	  	<a class="navbar-brand" href="{% url 'article:index' %}">
@@ -55,12 +55,6 @@
 		{% block index.html%}
 		
 		{% endblock %}
-
-	<br>
-	
-	{% block footer%}
-		
-	{% endblock %}
 
 </body>
 <script type="text/javascript" href="{% static 'js/jquery.js' %}"></script>

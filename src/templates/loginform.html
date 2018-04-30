@@ -1,10 +1,12 @@
 {% extends 'layout.html' %}
 {% load crispy_forms_tags %}
 
-{% block title %}<title>DragonFeed - Sign Up</title>{% endblock %}
+{% block title %}<title>DragonFeed - Log In</title>{% endblock %}
 
 {% block index.html %}
-<div class="col-md-6 col-md-offset-3">
+
+{{ error_message }}
+<div class="col-md-4 offset-md-4">
     <h1>{{title}}</h1>
     <form method="POST" action='' enctype="multipart/form-data">
         {% csrf_token %}

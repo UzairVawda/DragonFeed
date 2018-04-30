@@ -3,47 +3,40 @@
 {% block title %}<title>DragonFeed - Informal Events</title>{% endblock %}
 
 {% block index.html%}
-<div class="container">
-    {% if allArticles %}
-    <p class="text-center content-header">Current Informal* Events</p> 
-        <div class="card-deck ">
-            {% for article in allArticles %}
-                {% if not article.Orginization %} 
-                    <div class="card">
-                        <a href="{% url 'article:details' article.id %}">
-                            <img class="card-img-top" src="{{ article.Flyer.url}}" alt="Card image cap">
-                        </a>
-                        <div class="card-footer">
-                            <small class="text-muted">Uploaded {{article.timestamp}}</small>
-                        </div>
-                    </div>  
-                {% endif %} 
-            {% endfor %} 
-        </div> 
-        <br>
-        <h4>*An informal event is defined as an event <span style="font-weight:bold;">not</span> 
-            held by a Dexel associated orginization rather by a group of Drexel students.
-        </h4> 
-        {% else %}
-        <div class="container">
-            <h1>No Formal Events Yet</h1>
-        </div> 
-    {% endif %}
-</div>
-{% endblock %}
-
-{% block footer%}
-    <div class="navbar navbar-bottom fixed">
-        <p class="text-center bottom-nav-header">Searchable Tags</p>
-        <br>
-        <div class="container">
-            {% for article in allArticles %}
-                {% if not article.Orginization %}
-                    <div class="col-md-2">
-                        <p>{{article.Tag|lower}}</p>
-                    </div>      
-                {% endif %} 
-            {% endfor %}
-        </div>
+<div class="container-fluid">
+    <div class="row">	
+        <div class="col-md-9 mainfeed">
+            {% if allArticles %}
+            <p class="text-center content-header">Current Formal* Events</p> 
+                <div class="card-deck ">
+                    {% for article in allArticles %}
+                        {% if not article.Orginization %} 
+                            <div class="card">
+                                <a href="{% url 'article:details' article.id %}">
+                                    <img class="card-img-top" src="{{ article.Flyer.url}}" alt="Card image cap">
+                                </a>
+                                <div class="card-footer">
+                                    <small class="text-muted">Uploaded {{article.timestamp}}</small>
+                                    <i class="fab fa-font-awesome-flag"></i>
+                                </div>
+                            </div>  
+                        {% endif %} 
+                    {% endfor %} 
+                </div> 
+                <br>
+                <h4>*A formal event is defined as an event held by a Dexel associated orginization.</h4> 
+                {% else %}
+                <div class="container">
+                    <h1>No Formal Events Yet</h1>
+                </div> 
+                {% endif %}
+            </div>
+            <div class="col-md-3 widgets">
+                <h1>Trending Tags</h1>
+                {% for article in allArticles %}
+                    <p>{{article.Tag|lower}}</p>    
+                {% endfor %}
+            </div>
+        </div>	
     </div>
 {% endblock %}
