@@ -1,4 +1,4 @@
-from .models import Article
+from AdminPanel.models import Article
 from .forms import SignUpForm
 from django.views import generic
 from django.views.generic import View
