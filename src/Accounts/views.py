@@ -10,6 +10,10 @@ def login_view(request):
     title = "Login"
     form = UserLoginForm(request.POST or None)
     print(request.user.is_authenticated()) 
+    if request.user.is_authenticated():
+        username = request.user.username
+        print(username)
+        return redirect('/adminpanel', {username:'username'})
     if form.is_valid():
         username = form.cleaned_data.get("username")
         password = form.cleaned_data.get("password")
