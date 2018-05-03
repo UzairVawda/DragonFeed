@@ -17,5 +17,8 @@ urlpatterns = [
     url(r'^(?P<pk>[0-9]+)/delete/$', views.EventDelete.as_view(), name='event-delete'),
 
     #edit event - where the user can go to update an event
-    url(r'^(?P<pk>[0-9]+)/update/$', views.AlbumUpdate.as_view(), name='event-update'),
+    url(r'^(?P<pk>[0-9]+)/update/$', views.ArticleUpdate.as_view(), name='event-update'),
+
+    #detailed view - where if the user clicks on an event they get more info
+    url(r'^(?P<pk>[0-9]+)/$', views.DetailView.as_view(), name="details"),
 ]
