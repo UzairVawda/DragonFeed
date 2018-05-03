@@ -6,32 +6,35 @@
 <div class="container">
     {{username}}
     <div class="row">
-        {% for article in allArticles %}
-            <div class="col-md-4">
-                <div class="card">
-                    <a href="{% url 'article:details' article.id  %}">
-                        <img class="card-img-top" src="{{article.Flyer.url}}" alt="{{article.Flyer.Title}}">
-                    </a>
-                    <br>
-                    <div class="card-footer">
-                        <small class="text-muted">Uploaded {{article.timestamp}}</small>
-                        <div class="btn-group float-right" role="group">
-                            <form action="{% url 'adminpanel:event-delete' article.id %}" method="post">
-                                {% csrf_token %}
-                                <input type="hidden" name="article_id" value="{{ article.id }}"/>
-                                <button class="btn btn-secondary btn-sm btn-danger">Delete</button>
-                            </form>
-                            <form action="{% url 'adminpanel:event-update' article.id %}" method="post">
-                                {% csrf_token %}
-                                <input type="hidden" name="article_id" value="{{ article.id }}" />
-                                <button class="btn btn-seconday btn-sm btn-info">Edit Album</button>
-                            </form>
+        {% if allArticles %}
+            {% for article in allArticles %}
+                <div class="col-md-4">
+                    <div class="card">
+                        <a href="{% url 'article:details' article.id  %}">
+                            <img class="card-img-top" src="{{article.Flyer.url}}" alt="{{article.Flyer.Title}}">
+                        </a>
+                        <br>
+                        <div class="card-footer">
+                            <div class="btn-group float-center" role="group">
+                                <form action="{% url 'adminpanel:event-delete' article.id %}" method="post">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="article_id" value="{{ article.id }}"/>
+                                    <button class="btn btn-secondary btn-sm btn-danger">Delete</button>
+                                </form>
+                                <form action="{% url 'adminpanel:event-update' article.id %}" method="post">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="article_id" value="{{ article.id }}" />
+                                    <button class="btn btn-seconday btn-sm btn-info">Edit Article</button>
+                                </form>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <br> 
-            </div>          
-        {% endfor %}
+                    <br> 
+                </div>          
+            {% endfor %}
+        {% else %}
+                <h1>No events to be edited</h1>
+        {% endif %}
     </div>
 </div>
 {% endblock %}
