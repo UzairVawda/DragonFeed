@@ -7,28 +7,28 @@
         <p class="text-center content-header">Welcome to the Admin Panel, {{username}}</p>
         <br>
         <div class="row">
-            <div class="col-md-2 offset-md-3">
-                <a href="{% url 'adminpanel:addevent' %}">
-                    <button class="btn admin-panel-button">
+            <div class="col-md-3 offset-md-2">
+                <a href="{% url 'adminpanel:event-addevent' %}">
+                    <button class="btn btn-lg btn-block admin-panel-button">
                         Add Article
                     </button>
                 </a>
             </div>
-            <div class="col-md-2 ">
-                <a href="{% url 'adminpanel:edit-event' %}">
-                    <button class="btn admin-panel-button">
+            <div class="col-md-3 ">
+                <a href="{% url 'adminpanel:event-edits' %}">
+                    <button class="btn btn-lg btn-block admin-panel-button">
                         Edit Article
                     </button>
                 </a>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-3">
                 <a href="{% url 'accounts:logout' %}">
-                    <button class="btn admin-panel-button">
+                    <button class="btn btn-lg btn-block admin-panel-button">
                         Logout
                     </button>
                 </a> 
             </div>
         </div>
     </div>
-
+    <i class="fas fa-bullhorn"></i>
 {% endblock %}

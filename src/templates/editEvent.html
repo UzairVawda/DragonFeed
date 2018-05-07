@@ -1,10 +1,9 @@
 {% extends 'layout.html'%}
 
-{% block title %}<title>DragonFeed - {{username}}'s events</title>{% endblock %}
+{% block title %}<title>DragonFeed - Edit events</title>{% endblock %}
 
 {% block index.html%}
 <div class="container">
-    {{username}}
     <div class="row">
         {% if allArticles %}
             {% for article in allArticles %}
@@ -19,12 +18,12 @@
                                 <form action="{% url 'adminpanel:event-delete' article.id %}" method="post">
                                     {% csrf_token %}
                                     <input type="hidden" name="article_id" value="{{ article.id }}"/>
-                                    <button class="btn btn-secondary btn-sm btn-danger">Delete</button>
+                                    <button class="btn btn-md btn-block btn-secondary btn-danger">Delete</button>
                                 </form>
                                 <form action="{% url 'adminpanel:event-update' article.id %}" method="post">
                                     {% csrf_token %}
                                     <input type="hidden" name="article_id" value="{{ article.id }}" />
-                                    <button class="btn btn-seconday btn-sm btn-info">Edit Article</button>
+                                    <button class="btn btn-md btn-block btn-seconday btn-info">Edit Article</button>
                                 </form>
                             </div>
                         </div>
