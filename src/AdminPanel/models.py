@@ -15,7 +15,7 @@ class Article(models.Model):
     timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)
 
     def get_absolute_url(self):
-      return reverse('adminpanel:details', kwargs={'pk': self.pk})
+      return reverse('adminpanel:event-details', kwargs={'pk': self.pk})
         
     def __str__(self):
 	    return self.Title + " - " + self.Orginization

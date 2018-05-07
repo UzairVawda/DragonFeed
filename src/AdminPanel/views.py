@@ -33,16 +33,17 @@ class EditEvent(generic.ListView):
 
 #Allows the user to update details for an article
 class ArticleUpdate(UpdateView):
-	model = Article
-	template_name = 'articleform.html'
-	fields = ['Title', 'Location', 'Description','Start','End','Link']
+    model = Article
+    fields = '__all__'
+    template_name = 'articleform.html'
+    fields = ['Title', 'Orginization', 'Location', 'Description', 'Start', 'End', 'Tag', 'Link', 'Flyer']
 
 #Deleting the event
 class EventDelete(DeleteView):
 	model = Article
-	success_url = reverse_lazy('adminpanel:adminpanel')
+	success_url = reverse_lazy('adminpanel:event-edits')
 
-#details.html - displays more information for an event
+#Displays more information for an event
 class DetailView(generic.DetailView):
     template_name = 'detailsAdminpanel.html'
     model = Article
