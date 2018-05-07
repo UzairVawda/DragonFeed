@@ -12,8 +12,8 @@ def login_view(request):
     print(request.user.is_authenticated()) 
     if request.user.is_authenticated():
         username = request.user.username
-        print(username)
-        return redirect('/adminpanel', {username:'username'})
+        context = {'username': username}
+        return redirect('/adminpanel', context)
     if form.is_valid():
         username = form.cleaned_data.get("username")
         password = form.cleaned_data.get("password")
@@ -35,7 +35,6 @@ def register_view(request):
         user.set_password(password)
         user.save()
         new_user = authenticate(username=user.username, password=password)
-        # login(request, new_user)
         print(new_user)
         print(request.user.is_authenticated()) 
         return redirect('/accounts/login')

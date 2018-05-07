@@ -37,7 +37,8 @@ class UserRegistrationForm(forms.ModelForm):
         password = cleaned_data.get("password")
         password2 = cleaned_data.get("confirm_password")
 
-        if password != password2:
-            raise forms.ValidationError(
-                "Both Passwords must match does not match"
-            )
+        # if password != password2:
+        #     raise forms.ValidationError(
+        #         "Both Passwords must match does not match"
+        #     )
+        # return password
