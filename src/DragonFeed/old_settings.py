@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'Events',
     'Accounts',
     'AdminPanel',
-    'crispy_forms'
+    'crispy_forms',
+    'bootstrap3_datetime'
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
