@@ -4,7 +4,7 @@
     <div class="row">	
         <div class="col-md-9 mainfeed">
             {% if allArticles %} 
-            <p class="text-center content-header">Current Events</p>
+            <p class="text-center content-header" style="color:#ec4840;">Current Events</p>
             <div class="card-deck">
                 {% for article in allArticles %}
                     <div class="col-md-4">
@@ -14,7 +14,7 @@
                             </a>
                             <br>
                             <div class="card-footer">
-                                <small class="text-muted">Uploaded {{article.timestamp}}</small>
+                                <small style="color:#ec4840;">Uploaded {{article.timestamp}}</small>
                             </div>
                         </div>
                         <br> 
@@ -26,7 +26,7 @@
         {% endif %}
         </div>
         <div class="col-md-3 widgets">
-            <h1>Trending Tags</h1>
+            <h1 style="color:#ec4840;">Trending Tags</h1>
             {% for article in allArticles %}
                 <p>{{article.Tag|lower}}</p>    
             {% endfor %}

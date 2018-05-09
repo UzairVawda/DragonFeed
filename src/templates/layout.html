@@ -6,10 +6,11 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
 	<link href="https://fonts.googleapis.com/css?family=Raleway:400,600" rel="stylesheet">
+	<link rel="shortcut icon" href="{% static 'images/DragonFeed_blueontransparent.png'%}" type="image/x-icon" />
 
 </head>
 
-<body onload="myFunction()">
+<body>
 	<!-- Bootstarp navbar-->
 	<nav class="navbar navbar-expand-lg navbar-light nav-bar">
 	  	<a class="navbar-brand" href="{% url 'article:index' %}">
@@ -34,7 +35,7 @@
 			</ul>
 		    <ul class="navbar-nav ml-auto">
 			    <form class="form-inline my-2 my-lg-0">
-			      <input class="form-control mr-sm-2 nav-bar-input-porperties" type="search" class="search-nav" placeholder="Search by Tag" aria-label="Search">
+			      <input class="form-control mr-sm-2 nav-bar-input-porperties" type="search" class="search-nav" placeholder="Search by Tag" aria-label="Search" style="::placeholder:#ec4840;">
 			      <button class="btn my-2 my-sm-0 nav-bar-button-porperties" type="submit">Search</button>
 			    </form>
 				<a class="nav-link" href="{% url 'accounts:register' %}">
