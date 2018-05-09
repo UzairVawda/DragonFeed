@@ -1,5 +1,6 @@
-from django.views import generic
+from .forms import *
 from models import Article
+from django.views import generic
 from django.views.generic import View
 from django.shortcuts import render, redirect
 from django.core.urlresolvers import reverse_lazy
@@ -19,9 +20,8 @@ def AdminPanel(request):
 #Allows the user to add an event
 class AddEvent(CreateView):
     model = Article
-    fields = '__all__'
+    form_class = AddEventForm
     template_name = 'articleform.html'
-    fields = ['Title', 'Orginization', 'Location', 'Description', 'Start', 'End', 'Tag', 'Link', 'Flyer']
 
 #User is given two options of deleting or updating an event
 class EditEvent(generic.ListView):
@@ -34,9 +34,8 @@ class EditEvent(generic.ListView):
 #Allows the user to update details for an article
 class ArticleUpdate(UpdateView):
     model = Article
-    fields = '__all__'
+    form_class = AddEventForm
     template_name = 'articleform.html'
-    fields = ['Title', 'Orginization', 'Location', 'Description', 'Start', 'End', 'Tag', 'Link', 'Flyer']
 
 #Deleting the event
 class EventDelete(DeleteView):
