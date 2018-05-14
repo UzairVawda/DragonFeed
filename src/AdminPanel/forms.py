@@ -10,7 +10,7 @@ class AddEventForm(ModelForm):
 
     class Meta:
         model = Article
-        fields = ['Title', 'Orginization', 'Location', 'Description', 'Start', 'End', 'Tag', 'Link', 'Flyer']
+        fields = ['Title', 'Organization', 'Location', 'Description', 'Start', 'End', 'Tag', 'Link', 'Flyer']
         widgets = {
             'Start': DateInput(),
             'End': DateInput(),

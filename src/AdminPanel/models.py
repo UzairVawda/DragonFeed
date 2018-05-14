@@ -4,7 +4,7 @@ from django.core.urlresolvers import reverse
 
 class Article(models.Model):
     Title = models.CharField(max_length=50)
-    Orginization = models.CharField(max_length=50, blank=True)
+    Organization = models.CharField(max_length=50, blank=True)
     Location = models.CharField(max_length=100)
     Description = models.TextField(blank=True)
     Start = models.DateTimeField(default=datetime.now, blank=True)
