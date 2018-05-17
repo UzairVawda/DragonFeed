@@ -186,13 +186,20 @@ input[type=search] {
   background-color: #002f6c;
   color: #ffc600;
 }
-
 .adminpanel-back{
   background-color: #ffc600;
   color: #002f6c;
 }
-
 .adminpanel-back:hover{
   background-color: #002f6c;
   color: #ffc600;  
+}
+.make-red{
+  color: #ec4840;
+}
+.widgets{
+  border-left: 10px black;
+}
+.weatherwidget-io{
+  background-color: rgb(7,41,77);
 }
