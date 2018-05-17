@@ -4,7 +4,7 @@
     <div class="row">	
         <div class="col-md-9 mainfeed">
             {% if allArticles %} 
-            <p class="text-center content-header" style="color:#ec4840;">Current Events</p>
+            <p class="text-center content-header make-red">Current Events</p>
             <div class="card-deck">
                 {% for article in allArticles %}
                     <div class="col-md-4">
@@ -14,7 +14,7 @@
                             </a>
                             <br>
                             <div class="card-footer">
-                                <small style="color:#ec4840;">Uploaded {{article.timestamp}}</small>
+                                <small class=make-red"">Uploaded {{article.timestamp}}</small>
                             </div>
                         </div>
                         <br> 
@@ -25,11 +25,18 @@
                 <h1>No Events Yet</h1>
         {% endif %}
         </div>
-        <div class="col-md-3 widgets">
-            <h1 style="color:#ec4840;">Trending Tags</h1>
+        <div class="col-md-3 widgets" style="border-left">
+            <h1 class="text-center make-red">Trending Tags</h1>
             {% for article in allArticles %}
-                <p>{{article.Tag|lower}}</p>    
+                <p class="text-center">{{article.Tag|lower}}</p>    
             {% endfor %}
+            <br>
+            <h1 class="text-center make-red">Weather</h1>
+            <a class="weatherwidget-io" href="https://forecast7.com/en/39d95n75d17/philadelphia/" data-label_1="PHILADELPHIA" data-label_2="WEATHER" data-theme="weather_one" >PHILADELPHIA WEATHER</a>
+            <script>
+                !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+            </script>
+            <br>
         </div>
     </div>	
 </div>
