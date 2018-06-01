@@ -15,4 +15,7 @@ urlpatterns = [
 
     #detailed view - where if the user clicks on an event they get more info
     url(r'^(?P<pk>[0-9]+)/$', views.DetailView.as_view(), name="details"),
+
+    #filtered news - filtering based on user input
+    url(r'^filtered/$', views.FilteredArticles.as_view(), name="filtered"),
 ]
