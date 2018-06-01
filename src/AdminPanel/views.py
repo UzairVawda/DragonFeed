@@ -33,9 +33,9 @@ class EditEvent(generic.ListView):
 
 #Allows the user to update details for an article
 class ArticleUpdate(UpdateView):
-    model = Article
     form_class = AddEventForm
     template_name = 'articleform.html'
+    model = Article
 
 #Deleting the event
 class EventDelete(DeleteView):
