@@ -9,18 +9,12 @@
 
 {% block index.html%}
 	<div class="container">
-		<div class="add-event-form">
-			<p class="text-center content-header">Create Event</p>
-			<form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
-				{% csrf_token %}
-				{% include 'formtemplate.html'%}
-				<div class="form-group">
-					<div class="col-md-10">
-						<button type="submit" class="btn btn-success add-article-button">Add Article</button>
-					</div>
-				</div>
-			</form>
-		</div>
+		<h3 class="text-center content-header">Create Event</h3>
+		<form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
+			{% csrf_token %}
+			{% include 'formtemplate.html'%}
+			<button type="submit" class="btn btn-success add-article-button">Add Article</button>
+		</form>
 	</div>
 {% endblock %}
 		

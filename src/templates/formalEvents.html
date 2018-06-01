@@ -7,35 +7,56 @@
     <div class="row">	
         <div class="col-md-9 mainfeed">
             {% if allArticles %}
-            <p class="text-center content-header">Current Formal* Events</p> 
+            <p class="text-center content-header make-red">Current Formal* Events</p> 
                 <div class="card-deck ">
                     {% for article in allArticles %}
                         {% if article.Orginization %} 
-                            <div class="card">
-                                <a href="{% url 'article:details' article.id %}">
-                                    <img class="card-img-top" src="{{ article.Flyer.url}}" alt="Card image cap">
-                                </a>
-                                <div class="card-footer">
-                                    <small class="text-muted">Uploaded {{article.timestamp}}</small>
-                                    <i class="fab fa-font-awesome-flag"></i>
-                                </div>
-                            </div>  
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <a href="{% url 'article:details' article.id %}">
+                                        <img class="card-img-top" src="{{ article.Flyer.url}}" alt="Card image cap">
+                                    </a>
+                                    <div class="card-footer">
+                                        <small class="text-muted">Uploaded {{article.timestamp}}</small>
+                                        <i class="fab fa-font-awesome-flag"></i>
+                                    </div>
+                                </div>  
+                                <br> 
+                            </div>
                         {% endif %} 
                     {% endfor %} 
                 </div> 
                 <br>
-                <h4>*A formal event is defined as an event held by a Dexel associated orginization.</h4> 
+                <h4 class="make-red">*A formal event is defined as an event held by a Dexel associated orginization.</h4> 
                 {% else %}
                 <div class="container">
                     <h1>No Formal Events Yet</h1>
                 </div> 
                 {% endif %}
             </div>
-            <div class="col-md-3 widgets">
-                <h1>Trending Tags</h1>
+            <div class="col-md-3 widgets" style="border-left: 1px solid black;">
+                <h1 class="text-center make-red">Trending Tags</h1>
                 {% for article in allArticles %}
-                    <p>{{article.Tag|lower}}</p>    
+                    <p class="text-center">{{article.Tag|lower}}</p>    
                 {% endfor %}
+                <br>
+    
+                <h3 class="text-center make-red">Weather</h3>
+                <a class="weatherwidget-io" href="https://forecast7.com/en/39d95n75d17/philadelphia/" data-label_1="PHILADELPHIA" data-label_2="WEATHER" data-theme="weather_one" >PHILADELPHIA WEATHER</a>
+                <script>
+                    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+                </script>
+                <br>
+    
+                <iframe id="yb_widget_108482" frameBorder="0" scrolling=no style="width: 300px; height: 484px;" src="https://www.yardbarker.com/widget/ybn/108482"></iframe>
+                <div style="width: 400px; font-size: 13px; line-height: 12px;">&nbsp;&nbsp;
+                </div>
+                <br>
+    
+                <br>
+                <br>
+                <br>
+                <br>
             </div>
         </div>	
     </div>

@@ -10,10 +10,10 @@
 
 </head>
 
-<body>
+<body onload="myFunction()" style="margin:0;">
 	<!-- Bootstarp navbar-->
 	<nav class="navbar navbar-expand-lg navbar-light nav-bar">
-	  	<a class="navbar-brand" href="{% url 'article:index' %}">
+		<a class="navbar-brand" href="{% url 'article:index' %}">
 			<img src="{% static 'images/DragonFeedSmall.png'%}" width="50" height="50" alt="DragonFeed">
 		</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,7 +21,7 @@
 		</button>
 
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
-		    <ul class="navbar-nav mr-auto">
+			<ul class="navbar-nav mr-auto">
 				<a href="{% url 'article:formal' %}">
 					<button class="nav-item btn my-2 my-sm-0 nav-bar-button-porperties">
 						Formal Events
@@ -33,11 +33,14 @@
 					</button>
 				</a>
 			</ul>
-		    <ul class="navbar-nav ml-auto">
-			    <form class="form-inline my-2 my-lg-0">
-			      <input class="form-control mr-sm-2 nav-bar-input-porperties" type="search" class="search-nav" placeholder="Search by Tag" aria-label="Search" style="::placeholder:#ec4840;">
-			      <button class="btn my-2 my-sm-0 nav-bar-button-porperties" type="submit">Search</button>
-			    </form>
+			<ul class="navbar-nav ml-auto">
+				<form class="form-inline my-2 my-lg-0" id="searchform" action="{% url 'article:filtered' %}" method="get" accept-charset="utf-8">
+					<input class="searchfield form-control mr-sm-2 nav-bar-input-porperties search-nav" 
+					id="searchbox" name="q" type="text" placeholder="Search">
+					<button class="searchbutton btn my-2 my-sm-0 nav-bar-button-porperties" type="submit">
+					  <i class="fa fa-search">Search</i>
+					</button>
+				  </form>
 				<a class="nav-link" href="{% url 'accounts:register' %}">
 					<button class="btn my-2 my-sm-0 nav-bar-button-porperties" type="submit">
 						Sign Up	
@@ -48,17 +51,31 @@
 						Log In	
 					</button>
 				</a>
-          	</ul>
+			</ul>
 		</div>
 	</nav>
-	<br>
-	
+	<br>	
+	<div id="loader"></div>
+	<div style="display:none;" id="myDiv" class="animate-bottom">
 		{% block index.html%}
 		
-		{% endblock %}
+		{% endblock %}	
+	</div>		
 
 </body>
 <script type="text/javascript" href="{% static 'js/jquery.js' %}"></script>
 <script type="text/javascript" href="{% static 'js/bootstrap.js' %}"></script>
 <script type="text/javascript" href="{% static 'js/my.js' %}"></script>
+<script>
+	var myVar;
+
+	function myFunction() {
+		myVar = setTimeout(showPage, 1000);
+	}
+
+	function showPage() {
+	document.getElementById("loader").style.display = "none";
+	document.getElementById("myDiv").style.display = "block";
+	}
+</script>
 </html>
